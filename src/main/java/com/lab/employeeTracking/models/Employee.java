@@ -13,9 +13,16 @@ public class Employee {
     @Column(name = "id")
     private Long id;
 
+    @Column(name = "name")
     private String name;
+
+    @Column(name = "age")
     private int age;
+
+    @Column(name = "employeeNumber")
     private int employeeNumber;
+
+    @Column(name = "email")
     private String email;
 
     public Employee(String name, int age, int employeeNumber, String email) {

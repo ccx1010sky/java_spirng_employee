@@ -1,4 +1,7 @@
 package com.lab.employeeTracking.repositories;
 
-public interface EmployeeRepository {
+import com.lab.employeeTracking.models.Employee;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface EmployeeRepository extends JpaRepository<Employee,Long> {
 }

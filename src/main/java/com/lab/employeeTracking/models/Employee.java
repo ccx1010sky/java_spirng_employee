@@ -1,6 +1,7 @@
 package com.lab.employeeTracking.models;
 
 import javax.persistence.*;
+import java.util.List;
 
 
 @Entity
@@ -27,6 +28,21 @@ public class Employee {
     @ManyToOne
     @JoinColumn(name =  "department_id",nullable = false)
     private Department department;
+
+    @ManyToMany
+    @JoinTable(
+            name = "employees_projects",
+            joinColumns = {@JoinColumn(
+                    name = "employee_id",
+                    nullable = false,
+                    updatable = false)
+            },
+            inverseJoinColumns = { @JoinColumn(
+                    name ="project_id",
+                    nullable = false,
+                    updatable = false)
+            })
+    private List<Project> projects;
 
     public Employee(String firstName, String lastName, int employeeNumber,Department department) {
         this.firstName = firstName;

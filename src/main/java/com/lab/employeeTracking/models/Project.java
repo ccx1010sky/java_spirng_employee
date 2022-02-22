@@ -19,7 +19,7 @@ public class Project {
     private String name;
 
     @Column(name = "duration")
-    private int druation;
+    private int duration;
 
     @ManyToMany
     @JoinTable(
@@ -36,9 +36,9 @@ public class Project {
             })
     private List<Employee> employees;
 
-    public Project(String name, int druation) {
+    public Project(String name, int duration) {
         this.name = name;
-        this.druation = druation;
+        this.duration = duration;
         this.employees = new ArrayList<>();
     }
 
@@ -61,12 +61,12 @@ public class Project {
         this.name = name;
     }
 
-    public int getDruation() {
-        return druation;
+    public int getDuration() {
+        return duration;
     }
 
-    public void setDruation(int druation) {
-        this.druation = druation;
+    public void setDuration(int druation) {
+        this.duration = druation;
     }
 
     public List<Employee> getEmployees() {
@@ -77,7 +77,7 @@ public class Project {
         this.employees = employees;
     }
 
-    public void addEmployees(Employee employee){
-        this.employees.add(employee);
-    }
+//    public void addEmployees(Employee employee){
+//        this.employees.add(employee);
+//    }
 }

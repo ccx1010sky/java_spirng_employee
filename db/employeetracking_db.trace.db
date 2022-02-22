@@ -2698,3 +2698,6 @@ DROP TABEL DEPARTMENTS [42000-200]
 2022-02-22 11:04:23 jdbc[13]: exception
 org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "DROP TABEL[*] DEPARTMENTS"; expected "TABLE, INDEX, USER, SEQUENCE, CONSTANT, TRIGGER, VIEW, ROLE, ALIAS, SCHEMA, ALL, DOMAIN, TYPE, DATATYPE, AGGREGATE, SYNONYM"; SQL statement:
 DROP TABEL DEPARTMENTS [42001-200]
+2022-02-22 11:09:39 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "OYEES[*]"; SQL statement:
+OYEES [42000-200]

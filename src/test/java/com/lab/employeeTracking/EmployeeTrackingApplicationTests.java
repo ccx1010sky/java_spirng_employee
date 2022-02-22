@@ -4,6 +4,7 @@ import com.lab.employeeTracking.models.Department;
 import com.lab.employeeTracking.models.Employee;
 import com.lab.employeeTracking.repositories.DepartmentRepository;
 import com.lab.employeeTracking.repositories.EmployeeRepository;
+import com.lab.employeeTracking.repositories.ProjectRepository;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
@@ -19,6 +20,10 @@ class EmployeeTrackingApplicationTests {
 	EmployeeRepository employeeRepository;
 	@Autowired
 	DepartmentRepository departmentRepository;
+
+	@Autowired
+	ProjectRepository  projectRepository;
+
 
 	@Test
 	void contextLoads() {

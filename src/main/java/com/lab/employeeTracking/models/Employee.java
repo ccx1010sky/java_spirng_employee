@@ -23,6 +23,7 @@ public class Employee {
     private int employeeNumber;
 
 
+
     @ManyToOne
     @JoinColumn(name =  "department_id",nullable = false)
     private Department department;

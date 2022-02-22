@@ -1,6 +1,7 @@
 package com.lab.employeeTracking.models;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
@@ -43,6 +44,7 @@ public class Employee {
                     nullable = false,
                     updatable = false)
             })
+
     private List<Project> projects;
 
     public Employee(String firstName, String lastName, int employeeNumber,Department department) {
@@ -50,6 +52,7 @@ public class Employee {
         this.lastName = lastName;
         this.employeeNumber = employeeNumber;
         this.department = department;
+        this.projects = new ArrayList<>();
     }
 
     public Employee() {
@@ -94,12 +97,12 @@ public class Employee {
     public void setDepartment(Department department) {
         this.department = department;
     }
-    public void addProject(Project project) {
-        this.projects.add(project);
-    }
-    public void addProjects(Project... projects){
-            Collections.addAll(this.projects,projects);
-    }
+//    public void addProject(Project project) {
+//        this.projects.add(project);
+//    }
+//    public void addProjects(Project... projects){
+//            Collections.addAll(this.projects,projects);
+//    }
 
 
 }

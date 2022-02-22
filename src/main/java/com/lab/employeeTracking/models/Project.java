@@ -30,11 +30,12 @@ public class Project {
                     nullable = false,
                     updatable = false)
             },
-            inverseJoinColumns = { @JoinColumn(
+            inverseJoinColumns = {@JoinColumn(
                     name ="employee_id",
                     nullable = false,
                     updatable = false)
             })
+
     private List<Employee> employees;
 
     public Project(String name, int duration) {
@@ -66,8 +67,8 @@ public class Project {
         return duration;
     }
 
-    public void setDuration(int druation) {
-        this.duration = druation;
+    public void setDuration(int duration) {
+        this.duration = duration;
     }
 
     public List<Employee> getEmployees() {
@@ -78,10 +79,10 @@ public class Project {
         this.employees = employees;
     }
 
-    public void addEmployee(Employee employee){
-        this.employees.add(employee);
-    }
-    public  void addEmployees(Employee... employees){
-        Collections.addAll(this.employees, employees);
-    }
+//    public void addEmployee(Employee employee){
+//        this.employees.add(employee);
+//    }
+//    public  void addEmployees(Employee... employees){
+//        Collections.addAll(this.employees, employees);
+//    }
 }

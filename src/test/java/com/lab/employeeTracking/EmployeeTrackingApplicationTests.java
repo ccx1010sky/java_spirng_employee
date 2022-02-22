@@ -38,14 +38,18 @@ class EmployeeTrackingApplicationTests {
 	@Test
 	public void createEmployeeAndDepartment(){
 		Department  department = new Department("Tech");
+		Project project = new Project("java",2);
+		Employee employee = new Employee("Jack","smith",1001,department);
+
 		departmentRepository.save(department);
 
-		Employee jack = new Employee("Jack","smith",1001,department);
-		employeeRepository.save(jack);
+		employee.addProject(project);
+		employeeRepository.save(employee);
 
-		Project project = new Project("java",2);
-		project.addEmployee(jack);
+		project.addEmployee(employee);
 		projectRepository.save(project);
+
+
 
 
 

@@ -2,6 +2,7 @@ package com.lab.employeeTracking;
 
 import com.lab.employeeTracking.models.Department;
 import com.lab.employeeTracking.models.Employee;
+import com.lab.employeeTracking.models.Project;
 import com.lab.employeeTracking.repositories.DepartmentRepository;
 import com.lab.employeeTracking.repositories.EmployeeRepository;
 import com.lab.employeeTracking.repositories.ProjectRepository;
@@ -41,6 +42,12 @@ class EmployeeTrackingApplicationTests {
 
 		Employee jack = new Employee("Jack","smith",1001,department);
 		employeeRepository.save(jack);
+
+		Project project = new Project("java",2);
+		project.addEmployee(jack);
+		projectRepository.save(project);
+
+
 
 	}
 

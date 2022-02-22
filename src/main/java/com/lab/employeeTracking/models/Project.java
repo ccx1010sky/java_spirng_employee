@@ -77,7 +77,7 @@ public class Project {
         this.employees = employees;
     }
 
-//    public void addEmployees(Employee employee){
-//        this.employees.add(employee);
-//    }
+    public void addEmployee(Employee employee){
+        this.employees.add(employee);
+    }
 }

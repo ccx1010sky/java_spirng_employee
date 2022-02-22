@@ -1,6 +1,7 @@
 package com.lab.employeeTracking.models;
 
 import javax.persistence.*;
+import java.util.Collections;
 import java.util.List;
 
 
@@ -93,4 +94,12 @@ public class Employee {
     public void setDepartment(Department department) {
         this.department = department;
     }
+    public void addProject(Project project) {
+        this.projects.add(project);
+    }
+    public void addProjects(Project... projects){
+            Collections.addAll(this.projects,projects);
+    }
+
+
 }

@@ -3,6 +3,7 @@ package com.lab.employeeTracking.models;
 
 import javax.persistence.*;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 @Entity
@@ -79,5 +80,8 @@ public class Project {
 
     public void addEmployee(Employee employee){
         this.employees.add(employee);
+    }
+    public  void addEmployees(Employee... employees){
+        Collections.addAll(this.employees, employees);
     }
 }

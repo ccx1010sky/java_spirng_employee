@@ -20,10 +20,11 @@ public class EmployeeController {
     public List<Employee> getAllEmployee(){
         return employeeRepository.findAll();
     }
-    @GetMapping (value = "/employees/1")
+    @GetMapping (value = "/employees/{id}")
     public Optional<Employee> getEmployee(@PathVariable Long id){
         return employeeRepository.findById(id);
 
     }
+
 
 }

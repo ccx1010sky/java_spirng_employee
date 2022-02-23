@@ -1,13 +1,10 @@
-package com.lab.employeeTracking.models;
-
+package com.codeclan.EmployeeDeptLab.models;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
-
 
 @Entity
 @Table(name="employees")
@@ -15,49 +12,48 @@ import java.util.List;
 public class Employee {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
+    @Column(name="id")
     private Long id;
 
-    @Column(name = "firstName")
+    @Column(name="first_name")
     private String firstName;
 
-    @Column(name = "lastName")
+    @Column(name="last_name")
     private String lastName;
 
-    @Column(name = "employeeNumber")
+    @Column(name="employeeNumber")
     private int employeeNumber;
 
     @JsonIgnoreProperties({"employees"})
     @ManyToMany
     @JoinTable(
-            name = "employees_projects",
-            joinColumns = {@JoinColumn(
+            name = "employee_projects",
+            joinColumns = { @JoinColumn(
                     name = "employee_id",
                     nullable = false,
                     updatable = false)
             },
             inverseJoinColumns = { @JoinColumn(
-                    name ="project_id",
-                    nullable = false,
-                    updatable = false)
-            })
+            name = "project_id",
+            nullable = false,
+            updatable = false)
+    })
     private List<Project> projects;
 
     @JsonIgnoreProperties({"employees"})
     @ManyToOne
-    @JoinColumn(name =  "department_id",nullable = false)
+    @JoinColumn(name="department_id", nullable=false)
     private Department department;
 
+    public Employee() {
+    }
 
-    public Employee(String firstName, String lastName, int employeeNumber,Department department) {
+    public Employee(String firstName, String lastName, int employeeNumber, Department department) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.employeeNumber = employeeNumber;
-        this.department = department;
         this.projects = new ArrayList<>();
-    }
-
-    public Employee() {
+        this.department = department;
     }
 
     public Long getId() {
@@ -92,14 +88,6 @@ public class Employee {
         this.employeeNumber = employeeNumber;
     }
 
-    public Department getDepartment() {
-        return department;
-    }
-
-    public void setDepartment(Department department) {
-        this.department = department;
-    }
-
     public List<Project> getProjects() {
         return projects;
     }
@@ -107,12 +95,12 @@ public class Employee {
     public void setProjects(List<Project> projects) {
         this.projects = projects;
     }
-//    public void addProject(Project project) {
-//        this.projects.add(project);
-//    }
-//    public void addProjects(Project... projects){
-//            Collections.addAll(this.projects,projects);
-//    }
 
+    public Department getDepartment() {
+        return department;
+    }
 
+    public void setDepartment(Department department) {
+        this.department = department;
+    }
 }
